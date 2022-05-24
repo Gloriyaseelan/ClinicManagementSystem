@@ -1,0 +1,40 @@
+﻿@model Clinic.Models.Login
+
+<html>
+<head>
+
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+</head>
+
+<img src="/images/clinic1.png" alt="logo" align="left" height="100" width="100" />&nbsp;
+<body>
+    <div class="topnav" style=" text-align:center">
+
+
+
+        <a class="active" asp-action="AddDoctor" asp-controller="Home" method="post">ADD DOCTOR</a>&nbsp;&nbsp;
+        <a class="active" asp-action="AddPatient" asp-controller="Home" method="post">ADD PATIENT</a>&nbsp;&nbsp;
+        <a class="active" asp-action="ScheduleAppointment" asp-controller="Home" method="post">SCHEDULE APPOINTMENT</a>&nbsp;&nbsp;
+        <a class="active" asp-action="CancelAppointment" asp-controller="Home" method="post">CANCEL APPOINTMENT</a>&nbsp;&nbsp;
+        <a class="active" asp-action="Index" asp-controller="Home" method="post">LOGOUT</a><br /><br /><br />
+
+    </div>
+    <div>
+        <style>
+            body {
+                background-image: url("/images/home.jpg");
+                background-size: cover;
+            }
+        </style> <br /><br /><br />
+        <p>
+            <center><b>Good health and good sense are two of life's greatest blessings</b></center>
+            <center>
+                There's nothing more important than our good health - that's our principal capital asset. To enjoy the glow of good health, you must exercise.
+                Good health is not something we can buy.
+            </center>
+        </p>
+    </div>
+</body>
+</html>
+

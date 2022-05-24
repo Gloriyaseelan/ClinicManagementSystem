@@ -1,0 +1,88 @@
+﻿@model Clinic.Models.AddDoc
+
+@using (Html.BeginForm("Doctor", "Home", FormMethod.Post))
+{
+   
+<body>
+    <div class="topnav" style=" text-align:center">
+
+        <img src="/images/clinic1.png" alt="logo" align="left" height="100" width="100" />&nbsp;
+
+
+        <nav>
+            <a class="active" asp-action="Home" asp-controller="Home" method="post">HOME</a>&nbsp;&nbsp;
+            <a class="active" asp-action="AddDoctor" asp-controller="Home" method="post">ADD DOCTOR</a>&nbsp;&nbsp;
+            <a class="active" asp-action="AddPatient" asp-controller="Home" method="post">ADD PATIENT</a>&nbsp;&nbsp;
+            <a class="active" asp-action="ScheduleAppointment" asp-controller="Home" method="post">SCHEDULE APPOINTMENT</a>&nbsp;&nbsp;
+            <a class="active" asp-action="CancelAppointment" asp-controller="Home" method="post">CANCEL APPOINTMENT</a>&nbsp;&nbsp;
+            <a class="active" asp-action="Index" asp-controller="Home" method="post">LOGOUT</a><br /><br /><br />
+
+
+        </nav>
+    </div>
+    <br /><br />
+    <style>
+        body {
+            background-image: url("/images/Doctor1.jpg");
+            background-size: cover;
+        }
+    </style><br/><br/><br/>
+    <center><b>ADD DOCTORS</b></center>
+    <table align="center">        
+        &nbsp;&nbsp;&nbsp;
+        <tr>
+            <td>FirstName:</td>
+            <td>
+                @Html.TextBoxFor(m => m.FirstName)<br />
+                @Html.ValidationMessageFor(m => m.FirstName)
+            </td>
+        </tr>
+        <tr>
+            <td>LastName</td>
+            <td>
+                @Html.TextBoxFor(m => m.LastName)
+                @Html.ValidationMessageFor(m => m.LastName)
+            </td>
+        </tr>
+        <tr>
+            <td>Sex:</td>
+            <td>
+                @Html.ValidationMessageFor(m => m.Sex)
+                <select name="Sex">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="others">Others</option>
+
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Specialisation:</td>
+            <td>
+                @Html.ValidationMessageFor(m => m.Specialisation)
+                <select name="Specialisation">
+                    <option value="Devi">General</option>
+                    <option value="Yoga">Internal Medicine</option>
+                    <option value="Nikshi">Pediatrics</option>
+                    <option value="Swetha">Orthopedics</option>
+                    <option value="Jaya">Opthalmology</option>
+                </select>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>VisitingHours</td>
+            <td>
+                @Html.ValidationMessageFor(m => m.VisitingHours)
+                
+                <br />
+                @Html.RadioButtonFor(m => m.VisitingHours, "01:00PM-02:00PM")10:00AM-01:00PM<br />
+                @Html.RadioButtonFor(m => m.VisitingHours, "02:00PM-03:00PM")01:00AM-04:00PM<br />
+                @Html.RadioButtonFor(m => m.VisitingHours, "03:00PM-04:00PM")04:00PM-08:00PM<br /><br />
+            </td>
+        </tr>
+    </table>
+    <center><input type="submit" value="save" /></center>
+</body>
+
+}

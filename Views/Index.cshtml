@@ -1,0 +1,39 @@
+﻿@model Clinic.Models.Login
+@using (Html.BeginForm("Indexpage", "Home", FormMethod.Post))
+ {
+    
+          <style>
+              body {
+                  background-image: url("/images/login1.jpg");
+                  background-size: cover;
+              }
+          </style>
+    
+
+
+    <img src="~/images/clinic1.png"alt="logo"align="top"height="100"width="100" /><br/><br/><br/><br/>
+     <table>
+         
+
+              <tr>
+                   <td>
+                         UserName:
+                   </td>
+                    <td>
+                         @Html.TextBoxFor(m => m.UserName)
+                        @Html.ValidationMessageFor(m=>m.UserName)
+                    </td>
+              </tr>
+         
+       <tr>
+           <td>
+               Passcode:
+           </td>
+           <td>
+               @Html.PasswordFor(m => m.Passcode)
+               @Html.ValidationMessageFor(m => m.Passcode)
+           </td>
+       </tr>
+     </table>
+    <input type="submit" value="Login"  />
+ }

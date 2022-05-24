@@ -1,0 +1,46 @@
+﻿@model Clinic.Models.CancelApp
+
+@using (Html.BeginForm("Cancel", "Home", FormMethod.Post))
+{
+    
+<body>
+    <div class="topnav" style=" text-align:center">
+
+        <img src="/images/clinic1.png" alt="logo" align="left" height="100" width="100" />&nbsp;
+
+
+        <nav>
+            <a class="active" asp-action="Home" asp-controller="Home" method="post">HOME</a>&nbsp;&nbsp;
+            <a class="active" asp-action="AddDoctor" asp-controller="Home" method="post">ADD DOCTOR</a>&nbsp;&nbsp;
+            <a class="active" asp-action="AddPatient" asp-controller="Home" method="post">ADD PATIENT</a>&nbsp;&nbsp;
+            <a class="active" asp-action="ScheduleAppointment" asp-controller="Home" method="post">SCHEDULE APPOINTMENT</a>&nbsp;&nbsp;
+            <a class="active" asp-action="CancelAppointment" asp-controller="Home" method="post">CANCEL APPOINTMENT</a>&nbsp;&nbsp;
+            <a class="active" asp-action="Index" asp-controller="Home" method="post">LOGOUT</a><br /><br /><br />
+
+
+        </nav>
+    </div><br /><br /><br />
+    <style>
+        body {
+            background-image: url("/images/Cancel.jpg");
+            background-size: cover;
+        }
+    </style><br /><br />
+    <center><b>CANCEL APPOINTMENTS</b></center> <br />
+    <table align="center">
+        <tr>
+            <td>PatientID:</td>
+            <td>
+                @Html.TextBoxFor(m => m.PatientID)
+                @Html.ValidationMessageFor(m => m.PatientID)
+            </td>
+        </tr>
+
+
+    </table> <br />
+    <br />
+    <br />
+    <center><input type="submit" value="Cancel" /></center>
+</body>
+}
+
